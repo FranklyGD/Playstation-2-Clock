@@ -18,7 +18,7 @@ function hour_pillar:new()
 	}
 
 	o.size = {
-		r = 2.5,
+		r = 3,
 		h = 30
 	}
 
@@ -59,9 +59,9 @@ function hour_pillar:draw()
 
 				love.graphics.setColor(final_color)
 
-				love.graphics.translate(tri_height * math.cos(rotation_offset - math.pi / 2) * flip * self.scale, tri_height * sin_x * cos_rot_off * -flip * self.scale)
+				love.graphics.translate(tri_height * math.cos(rotation_offset - half_pi) * flip * self.scale, tri_height * sin_x * cos_rot_off * -flip * self.scale)
 				love.graphics.scale(cos_rot_off, 1)
-				love.graphics.shear(0, math.cos(rotation_offset - math.pi / 2) * sin_x)
+				love.graphics.shear(0, math.cos(rotation_offset - half_pi) * sin_x)
 				love.graphics.scale(1, math.cos(self.rotation.x))
 
 				love.graphics.rectangle("fill", -self.size.r / 2 * self.scale, -self.size.h / 2 * self.scale, self.size.r * self.scale, self.size.h * self.scale)
